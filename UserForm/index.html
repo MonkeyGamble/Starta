@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="forms">
+			<form class="add_form">
+				<h2>Add new user</h2>
+				<input name="name" placeholder="name" required />
+				<input name="age" placeholder="age" />
+				<input name="job_id" placeholder="job_id" />
+				<input name="salary" placeholder="salary" />
+				<input type="submit" />
+			</form>
+			<form class="remove_form">
+				<h2>Remove user</h2>
+				<input name="id" placeholder="id" />
+				<input type="submit" />
+			</form>
+			<form class="update_form">
+				<h2>Update user data</h2>
+				<input name="id" placeholder="id" />
+				<input name="name" placeholder="name" required />
+				<input name="age" placeholder="age" />
+				<input name="job_id" placeholder="job_id" />
+				<input name="salary" placeholder="salary" />
+				<input type="submit" />
+			</form>
+		</div>
+		<div class="users_wrapper"></div>
+		<script src="./script.js"></script>
+	</body>
+</html>
