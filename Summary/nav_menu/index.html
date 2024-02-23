@@ -3,6 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="style.css" />
 		<title>Document</title>
 	</head>
@@ -24,10 +30,33 @@
 
 		<div class="popup">
 			<div class="popup_content">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ab
-				sapiente voluptatibus, expedita exercitationem fuga aliquid ex? Veniam
-				harum quam similique sed, ratione, fuga repellat quia quae nobis est
-				inventore!
+				<form class="login_form">
+					<h2>Login</h2>
+					<div class="input">
+						<input
+							type="email"
+							class="login_email"
+							placeholder="Email"
+							name="email"
+						/>
+						<div>
+							<input
+								type="password"
+								class="login_pass"
+								placeholder="Password"
+								name="password"
+							/>
+							<i class="fa-regular fa-eye-slash"></i>
+							<!-- <i class="fa-regular fa-eye"></i> -->
+						</div>
+						<p>Forgot password?</p>
+					</div>
+					<div class="login_buttons">
+						<button type="submit" class="login_enter">Login</button>
+						<button type="submit" class="registration">Registration</button>
+					</div>
+				</form>
+				<i class="fa-solid fa-xmark"></i>
 			</div>
 		</div>
 

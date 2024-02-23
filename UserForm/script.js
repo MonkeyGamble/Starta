@@ -34,12 +34,23 @@ update_form.addEventListener('submit', e => {
 });
 
 // Сетевые запросы
-function getUsers() {
+async function getUsers() {
 	let url = 'http://212.8.247.94:3050/users';
-	fetch(url)
-		.then(res => res.json())
-		.then(data => render(data));
+	try {
+		let res = await fetch(url);
+		let data = await res.json();
+		render(data);
+	} catch (error) {
+		console.error('Error', error);
+	}
 }
+
+// function getUsers() {
+// 	let url = 'http://212.8.247.94:3050/users';
+// 	fetch(url)
+// 		.then(res => res.json())
+// 		.then(data => render(data));
+// }
 
 function createNewUser(obj) {
 	let url = 'http://212.8.247.94:3050/user/create';
