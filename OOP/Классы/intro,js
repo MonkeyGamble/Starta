@@ -1,0 +1,51 @@
+// Введение в классы
+
+// let user1 = {
+//     name: 'Alex',
+//     role: 'Medic',
+//     lvl: 10,
+//     getInfo(){
+//         console.log(`Name: ${user1.name}, role: ${user1.role}`)
+//     }
+// }
+
+// let user2 = {
+//     name: 'Willyam',
+//     role: 'Support',
+//     lvl: 4,
+//     getInfo(){
+//         console.log(`Name: ${user2.name}, role: ${user2.role}`)
+//     }
+// }
+
+// ---------------------------------------------
+// Решение через классы
+
+// шаблонизатор (шаблон)    = класс
+// экземпляр                = объект
+
+// constructor внутри класса нжуен для того, чтобы
+// проиницилазиировать сво-ва для будущих экземпляров
+
+class User {
+	constructor(name, role, lvl) {
+		this.name = name;
+		this.role = role;
+		this.lvl = lvl;
+	}
+	getInfo() {
+		console.log(`Name: ${this.name}, role: ${this.role}`);
+	}
+	changeName(new_name) {
+		this.name = new_name;
+	}
+}
+
+let user1 = new User('Alex', 'Medic', 10);
+let user2 = new User('Willyam', 'Support', 4);
+
+user1.changeName('Tigran');
+user2.changeName('Steven');
+
+console.log(user1);
+console.log(user2);
