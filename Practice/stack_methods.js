@@ -69,6 +69,27 @@ class Stack {
 		}
 		return slicedArray;
 	}
+	reverse() {
+		let result = [];
+		for (let i = this.items.length - 1; i >= 0; i--) {
+			result[i] = this.items[this.items.length - 1 - i];
+		}
+		this.items = result;
+		return this.items;
+	}
+
+	incrementsByOne() {
+		for (let i = 0; i < this.items.length; i++) {
+			this.items[i]++;
+		}
+		return this.items;
+	}
+	increment(value) {
+		for (let i = 0; i < this.items.length; i++) {
+			this.items[i] += value;
+		}
+		return this.items;
+	}
 }
 
 let stack = new Stack();
@@ -78,8 +99,8 @@ stack.push(30);
 stack.push(40);
 stack.push(50, 60, 70);
 console.log(stack);
-console.log(stack.slice(0, 1));
-
+// console.log(stack.slice(0, 1));
+console.log(stack.increment(7));
 // let stack = new Stack([1, 14, 52, 6, 89]);
 // console.log(stack.maximum());
 // stack = [1, 14, 52, 6, 89];
@@ -89,8 +110,3 @@ console.log(stack.slice(0, 1));
 let array = [10, 20, 30];
 array.push(40, 50, 60);
 // console.log(array);
-
-function func(...args) {
-	console.log(args);
-}
-// func(1, 2, 3, 4);
