@@ -167,10 +167,10 @@
 	width: 900px;
 	margin: 30px auto;
 }
-.logins_container .login_card {
+.login_card {
 	width: 150px;
-
 	padding: 15px;
+	margin: 10px;
 	background-color: bisque;
 	font-family: 'Nunito', Courier, monospace;
 	font-size: 14px;

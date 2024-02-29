@@ -9,7 +9,7 @@ const openEye = document.querySelector('.fa-eye');
 const closeEye = document.querySelector('.fa-eye-slash');
 const inputPassword = document.querySelector('.login_pass');
 const login_form = document.querySelector('.login_form');
-
+const card = document.querySelector('.login_card');
 const allLogins = [];
 
 switcher.addEventListener('click', () => {
@@ -52,11 +52,11 @@ login_form.addEventListener('submit', e => {
 });
 
 function renderCards(array) {
-	const container = document.createElement('div');
-	container.classList.add('logins_container');
+	// const container = document.createElement('div');
+	// container.classList.add('logins_container');
 
-	const card = document.createElement('div');
-	card.classList.add('login_card');
+	// const card = document.createElement('div');
+	// card.classList.add('login_card');
 
 	for (let elem of array) {
 		const email = document.createElement('p');

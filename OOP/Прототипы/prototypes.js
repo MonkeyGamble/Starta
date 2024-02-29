@@ -7,7 +7,7 @@ Array.prototype.abs = function () {
 	return Math.abs(this[0] - this[this.length - 1]);
 };
 
-let array = [1, 2, 3, 4, 5];
+// let array = [1, 2, 3, 4, 5];
 // console.log(array.abs());
 
 // ----------------------------
@@ -20,4 +20,36 @@ String.prototype.initCap = function () {
 };
 
 let str2 = 'STRING';
-console.log(str2.initCap());
+// console.log(str2.initCap());
+
+// Задача 2
+// Реалиузйте в классе Array метод sum(), который будет возвращать сумму всех элементов массива
+let array = [1, 2, 3, 4, 5, 6];
+
+// array.sum() => 15
+
+Array.prototype.sum = function () {
+	return this.reduce((accum, elem) => accum + elem, 0);
+};
+// console.log(array.sum());
+// ------------------------------------
+// Задача 3
+// Реализуйте в классе Array метод concatWS(s). Метод должен формировать из массива строку,
+// помещая между каждым элементов значение указанного разделителя
+
+// let array = [1,2,3,4,5,6]
+// array.concatWS('-') => '1-2-3-4-5-6'
+
+Array.prototype.concatWS = function (s) {
+	let str = '';
+	for (let i = 0; i < this.length; i++) {
+		if (i !== this.length - 1) {
+			str += this[i] + s;
+		} else {
+			str += this[i];
+		}
+	}
+	return str;
+	// return this.join(str);
+};
+// console.log(array.concatWS('-'));

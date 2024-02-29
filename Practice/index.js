@@ -14,9 +14,10 @@ class Stack {
 	constructor() {
 		this.items = [];
 	}
-	push(elem) {
-		this.items[this.items.length] = elem;
+	push(...values) {
+		this.items = [...this.items, ...values];
 		return this.items.length;
+		// this.items[this.items.length] = elem;
 	}
 	pop() {
 		if (!this.isEmpty()) {
@@ -46,10 +47,50 @@ class Stack {
 		}
 		return min;
 	}
+	shift() {
+		if (!this.isEmpty()) {
+			let shift = this.items[0];
+			this.items = this.items.slice(1);
+			return shift;
+		} else return 'Array is empty!';
+	}
+	unshift(...values) {
+		this.items = [...values, ...this.items];
+		return this.items.length;
+	}
+	slice(index1, index2) {
+		if (index2 <= index1) throw new Error('Error');
+
+		let slicedArray = [];
+		let start = index1 || 0;
+		let end = index2 === undefined ? this.items.length : index2;
+		for (let i = start; i < end; i++) {
+			slicedArray[i - start] = this.items[i];
+		}
+		return slicedArray;
+	}
 }
 
-let stack = [1, 14, 52, 6, 89];
+let stack = new Stack();
+stack.push(10);
+stack.push(20);
+stack.push(30);
+stack.push(40);
+stack.push(50, 60, 70);
+console.log(stack);
+console.log(stack.slice(0, 1));
 
+// let stack = new Stack([1, 14, 52, 6, 89]);
+// console.log(stack.maximum());
 // stack = [1, 14, 52, 6, 89];
-console.log(Stack.maximum(stack));
+
 // console.log(stack.push(7));
+
+let array = [10, 20, 30];
+array.push(40, 50, 60);
+// console.log(array);
+
+function func(...args) {
+	console.log(args);
+}
+// func(1, 2, 3, 4);
