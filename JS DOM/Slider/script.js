@@ -29,6 +29,7 @@ rightBtn.onclick = () => {
 		slider_index = 0;
 		cards_container.style.left = '0px';
 	}
+	changeActiveBtn();
 };
 
 leftBtn.onclick = () => {
@@ -38,4 +39,35 @@ leftBtn.onclick = () => {
 		slider_index = images.length - 1;
 	}
 	cards_container.style.left = `${-1 * slider_index * card_width}px`;
+	changeActiveBtn();
 };
+
+//создание кнопок слайдера
+
+const slider_btns = document.querySelector('.slider_btns');
+
+for (let i = 0; i < images.length; i++) {
+	const round_btn = document.createElement('button');
+	round_btn.className = 'round_btn';
+	round_btn.innerText = i + 1;
+	slider_btns.append(round_btn);
+
+	round_btn.onclick = () => {
+		slider_index = i;
+		cards_container.style.left = `${-1 * slider_index * card_width}px`;
+		changeActiveBtn();
+	};
+}
+
+function changeActiveBtn() {
+	const allBtns = document.querySelectorAll('.round_btn');
+	allBtns.forEach((elem, index) => {
+		if (slider_index === index) {
+			elem.classList.add('active');
+		} else {
+			elem.classList.remove('active');
+		}
+	});
+}
+
+changeActiveBtn();
