@@ -1,0 +1,25 @@
+.test {
+	padding: 10px;
+	background-color: aqua;
+	width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.post {
+	padding: 15px;
+	background-color: bisque;
+	margin: 15px;
+	border-radius: 15px;
+}
+
+.pizza {
+	width: 100px;
+	height: 100px;
+}
+
+@media (max-width: 800px) {
+	.test {
+		background-color: blue;
+	}
+}
