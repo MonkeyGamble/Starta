@@ -1,0 +1,55 @@
+// // $red-color: red;
+// // $green-color: green;
+// // $blue-color: blue;
+// :root {
+// 	--green-color: green;
+// 	--blue-color: blue;
+// 	--red-color: red;
+// }
+
+// .outer {
+// 	margin: 50px;
+// 	// background-color: $green-color;
+// 	background-color: var(--green-color);
+// 	width: 300px;
+// 	height: 300px;
+
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// }
+
+// .middle {
+// 	width: 200px;
+// 	height: 200px;
+// 	// background-color: $red-color;
+// 	background-color: var(--red-color);
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// }
+
+// .inner {
+// 	width: 100px;
+// 	height: 100px;
+// 	// background-color: $blue-color;
+// 	background-color: var(--blue-color);
+// }
+
+$font-sizes: (
+	small: 10px,
+	medium: 20px,
+	large: 30px,
+);
+
+$colors: (
+	red: red,
+	green: green,
+	blue: blue,
+);
+
+body {
+	font-size: map-get($font-sizes, large);
+	color: map-get($colors, blue);
+  background-color: map-get($colors, $key: );
+}
