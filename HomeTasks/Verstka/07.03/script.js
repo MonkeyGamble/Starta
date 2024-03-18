@@ -1,3 +1,5 @@
+const desktopWidth = window.innerWidth > 850;
+
 const header_content = document.querySelector('.header_content');
 
 const header_h = [
@@ -7,8 +9,21 @@ const header_h = [
 	'Бухгалтерские услуги <br>в городе № 4',
 ];
 
+const header_h_mobile = [
+	'Бухгалтерские услуги <br>в вашем любимом <br>городе',
+	'Бухгалтерские услуги <br>в вашем любимом <br>городе № 2',
+	'Бухгалтерские услуги <br>в вашем любимом <br>городе № 3',
+	'Бухгалтерские услуги <br>в вашем любимом <br>городе № 4',
+];
+
 const h2_item = document.createElement('h2');
-h2_item.innerHTML = header_h[0];
+
+function updateHeaderScreenWidth() {
+	h2_item.innerHTML = desktopWidth ? header_h[0] : header_h_mobile[0];
+}
+updateHeaderScreenWidth();
+window.addEventListener('resize', updateHeaderScreenWidth);
+
 header_content.append(h2_item);
 
 const header_button = document.createElement('div');
@@ -61,7 +76,9 @@ rightBtn.onclick = () => {
 		} else {
 			h2_index = 0;
 		}
-		h2_item.innerHTML = header_h[h2_index];
+		h2_item.innerHTML = desktopWidth
+			? header_h[h2_index]
+			: header_h_mobile[h2_index];
 		h2_item.style.opacity = 1;
 		rightBtn.classList.add('active');
 		leftBtn.classList.remove('active');
@@ -77,7 +94,9 @@ leftBtn.onclick = () => {
 		} else {
 			h2_index = header_h.length - 1;
 		}
-		h2_item.innerHTML = header_h[h2_index];
+		h2_item.innerHTML = desktopWidth
+			? header_h[h2_index]
+			: header_h_mobile[h2_index];
 		h2_item.style.opacity = 1;
 		leftBtn.classList.add('active');
 		rightBtn.classList.remove('active');
@@ -95,7 +114,6 @@ function changeActiveBtn() {
 		}
 	});
 }
-function changeActiveArrow() {}
 
 changeActiveBtn();
 
@@ -135,15 +153,23 @@ for (let elem of clients) {
 clients_content.append(clients_slider);
 
 // SLIDER
-
 const allSlides = document.querySelectorAll('.client_slide');
-for (let i = 0; i < allSlides.length; i++) {
-	if (i < 4) {
-		allSlides[i].style.display = 'block';
-	} else {
-		allSlides[i].style.display = 'none';
+
+function updateClientsSliderScreenWidth() {
+	for (let i = 0; i < allSlides.length; i++) {
+		if (desktopWidth) {
+			if (i < 4) {
+				allSlides[i].style.display = 'block';
+			} else {
+				allSlides[i].style.display = 'none';
+			}
+		} else {
+			allSlides[i].style.display = i === 0 ? 'block' : 'none';
+		}
 	}
 }
+updateClientsSliderScreenWidth();
+window.addEventListener('resize', updateClientsSliderScreenWidth);
 
 // BUTTONS
 const clients_bottom_content = document.createElement('div');
@@ -182,15 +208,23 @@ clients_bottom_content.append(clients_slider_btns, clients_triggers);
 clients_content.append(clients_slider, clients_bottom_content);
 
 let slider_index = 0;
-const card_width = 1110;
+// const card_width = 1110;
 
 // console.log('Slider index beforeclick:', slider_index);
 
 clients_rightBtn.onclick = () => {
-	if (slider_index + 4 < clients.length) {
-		slider_index += 4;
+	if (desktopWidth) {
+		if (slider_index + 4 < clients.length) {
+			slider_index += 4;
+		} else {
+			slider_index = 0;
+		}
 	} else {
-		slider_index = 0;
+		if (slider_index < clients.length - 1) {
+			slider_index++;
+		} else {
+			slider_index = 0;
+		}
 	}
 	// console.log('Slider index click:', slider_index);
 	clients_rightBtn.classList.add('active');
@@ -200,11 +234,20 @@ clients_rightBtn.onclick = () => {
 };
 
 clients_leftBtn.onclick = () => {
-	if (slider_index - 4 >= 0) {
-		slider_index -= 4;
+	if (desktopWidth) {
+		if (slider_index - 4 >= 0) {
+			slider_index -= 4;
+		} else {
+			slider_index = clients.length - 4;
+		}
 	} else {
-		slider_index = clients.length - 4;
+		if (slider_index > 0) {
+			slider_index--;
+		} else {
+			slider_index = clients.length - 1;
+		}
 	}
+
 	// console.log('Slider index after:', slider_index);
 	clients_leftBtn.classList.add('active');
 	clients_rightBtn.classList.remove('active');
@@ -214,17 +257,21 @@ clients_leftBtn.onclick = () => {
 
 function updateSlider() {
 	for (let i = 0; i < allSlides.length; i++) {
-		if (i >= slider_index && i < slider_index + 4) {
-			allSlides[i].style.display = 'block';
+		if (desktopWidth) {
+			if (i >= slider_index && i < slider_index + 4) {
+				allSlides[i].style.display = 'block';
+			} else {
+				allSlides[i].style.display = 'none';
+			}
 		} else {
-			allSlides[i].style.display = 'none';
+			allSlides[i].style.display = i === slider_index ? 'block' : 'none';
 		}
 	}
 }
 
 function changeActiveClientBtn() {
 	const allBtns = document.querySelectorAll('.clients_round_btn');
-	const activeIndex = Math.floor(slider_index / 4);
+	const activeIndex = Math.floor(slider_index / (desktopWidth ? 4 : 1));
 	allBtns.forEach((elem, index) => {
 		if (activeIndex === index) {
 			elem.classList.add('active');
@@ -271,23 +318,25 @@ const review_block = document.querySelector('.review_block');
 const review_content = document.createElement('div');
 review_content.className = 'review_content';
 
-const review_sign = document.createElement('div');
-review_sign.className = 'review_sign';
-
 const text = document.createElement('p');
 text.innerText = reviews[0].text;
 
-const photo = document.createElement('img');
-photo.alt = 'profile_photo';
-photo.src = reviews[0].img;
+review_content.append(text);
 
-const sign = document.createElement('p');
-const sign_span = document.createElement('span');
-sign_span.innerText = reviews[0].occupation;
-sign.append(reviews[0].name, ' ', sign_span);
+if (desktopWidth) {
+	const review_sign = document.createElement('div');
+	review_sign.className = 'review_sign';
+	const photo = document.createElement('img');
+	photo.alt = 'profile_photo';
+	photo.src = reviews[0].img;
+	const sign = document.createElement('p');
+	const sign_span = document.createElement('span');
+	sign_span.innerText = reviews[0].occupation;
+	sign.append(reviews[0].name, ' ', sign_span);
+	review_sign.append(photo, sign);
+	review_content.append(review_sign);
+}
 
-review_sign.append(photo, sign);
-review_content.append(text, review_sign);
 review_block.append(review_content);
 
 const review_slider = document.createElement('div');
@@ -354,10 +403,28 @@ review_leftBtn.onclick = () => {
 function nextReview(index) {
 	const review = reviews[index];
 	text.innerText = review.text;
-	photo.src = review.img;
-	sign_span.innerText = review.occupation;
-	sign.innerText = review.name + ' ';
-	sign.append(sign_span);
+	if (desktopWidth) {
+		let review_sign = document.querySelector('.review_sign');
+		if (!review_sign) {
+			review_sign = document.createElement('div');
+			review_sign.className = 'review_sign';
+		} else {
+			review_sign.innerHTML = '';
+		}
+		const photo = document.createElement('img');
+		photo.alt = 'profile_photo';
+		photo.src = review.img;
+		const sign = document.createElement('p');
+		const sign_span = document.createElement('span');
+		sign_span.innerText = review.occupation;
+		sign.innerText = review.name + ' ';
+		sign.append(sign_span);
+		review_sign.append(photo, sign);
+		review_content.append(text, review_sign);
+	} else {
+		review_sign.innerHTML = '';
+		review_content.append(text);
+	}
 }
 
 function changeActiveReviewBtn() {
@@ -371,3 +438,47 @@ function changeActiveReviewBtn() {
 	});
 }
 changeActiveReviewBtn();
+
+//BURGER MENU
+
+const burger_menu = document.querySelector('.fa-solid');
+const nav_list = document.querySelector('nav');
+
+let setBurgerMenu = false;
+
+burger_menu.onclick = () => {
+	burgerMenuHandler();
+};
+
+function burgerMenuHandler() {
+	if (setBurgerMenu) {
+		burger_menu.classList.remove('active');
+		nav_list.classList.remove('active');
+		nav_list.style.height = 'auto';
+		nav_list.style.overflow = 'unset';
+		setTimeout(() => {
+			nav_list.style.display = 'none';
+		}, 450);
+	} else {
+		burger_menu.classList.add('active');
+		nav_list.classList.add('active');
+		nav_list.style.height = '200px';
+		nav_list.style.overflow = 'hidden';
+		nav_list.style.display = 'block';
+	}
+	setBurgerMenu = !setBurgerMenu;
+}
+
+window.onresize = () => {
+	if (!desktopWidth) {
+		if (setBurgerMenu) {
+			nav_list.classList.add('active');
+		} else {
+			nav_list.classList.remove('active');
+		}
+	}
+
+	updateHeaderScreenWidth();
+	updateClientsSliderScreenWidth();
+	updateSlider();
+};
