@@ -30,7 +30,8 @@ leftArrow.alt = 'left arrow';
 leftBtn.append(leftArrow);
 
 const rightBtn = document.createElement('div');
-rightBtn.className = 'right_button';
+rightBtn.className = 'right_button active';
+
 const rightArrow = document.createElement('img');
 rightArrow.src = './media/right.png';
 rightArrow.alt = 'right arrow';
@@ -66,17 +67,6 @@ rightBtn.onclick = () => {
 		leftBtn.classList.remove('active');
 		changeActiveBtn();
 	}, 500);
-
-	// if (h2_index !== header_h.length - 1) {
-	// 	h2_index++;
-	// } else {
-	// 	h2_index = 0;
-	// }
-	// h2_item.innerHTML = header_h[h2_index];
-	// rightBtn.classList.add('active');
-	// leftBtn.classList.remove('active');
-	// changeActiveBtn();
-	// console.log('Right button clicked');
 };
 
 leftBtn.onclick = () => {
@@ -93,17 +83,6 @@ leftBtn.onclick = () => {
 		rightBtn.classList.remove('active');
 		changeActiveBtn();
 	}, 500);
-
-	// if (h2_index !== 0) {
-	// 	h2_index--;
-	// } else {
-	// 	h2_index = header_h.length - 1;
-	// }
-	// h2_item.innerHTML = header_h[h2_index];
-	// leftBtn.classList.add('active');
-	// rightBtn.classList.remove('active');
-	// changeActiveBtn();
-	// console.log('Left button clicked');
 };
 
 function changeActiveBtn() {
@@ -145,9 +124,9 @@ const clients_content = document.querySelector('.clients_content');
 const clients_slider = document.createElement('div');
 clients_slider.className = 'clients_slider';
 
-for (let i = 0; i < clients.length; i++) {
+for (let elem of clients) {
 	const client_slide = document.createElement('img');
-	client_slide.src = clients[i];
+	client_slide.src = elem;
 	client_slide.alt = 'client';
 	client_slide.className = 'client_slide';
 
@@ -180,7 +159,7 @@ clients_leftArrow.alt = 'left arrow';
 clients_leftBtn.append(clients_leftArrow);
 
 const clients_rightBtn = document.createElement('div');
-clients_rightBtn.className = 'clients_right_button';
+clients_rightBtn.className = 'clients_right_button active';
 const clients_rightArrow = document.createElement('img');
 clients_rightArrow.src = './media/right.png';
 clients_rightArrow.alt = 'right arrow';
@@ -205,7 +184,7 @@ clients_content.append(clients_slider, clients_bottom_content);
 let slider_index = 0;
 const card_width = 1110;
 
-console.log('Slider index beforeclick:', slider_index);
+// console.log('Slider index beforeclick:', slider_index);
 
 clients_rightBtn.onclick = () => {
 	if (slider_index + 4 < clients.length) {
@@ -213,7 +192,7 @@ clients_rightBtn.onclick = () => {
 	} else {
 		slider_index = 0;
 	}
-	console.log('Slider index click:', slider_index);
+	// console.log('Slider index click:', slider_index);
 	clients_rightBtn.classList.add('active');
 	clients_leftBtn.classList.remove('active');
 	updateSlider();
@@ -226,7 +205,7 @@ clients_leftBtn.onclick = () => {
 	} else {
 		slider_index = clients.length - 4;
 	}
-	console.log('Slider index after:', slider_index);
+	// console.log('Slider index after:', slider_index);
 	clients_leftBtn.classList.add('active');
 	clients_rightBtn.classList.remove('active');
 	updateSlider();
@@ -256,3 +235,139 @@ function changeActiveClientBtn() {
 }
 
 changeActiveClientBtn();
+
+// REVIEWS SECTION
+
+const reviews = [
+	{
+		text: 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.',
+		img: './media/ivanova.png',
+		name: 'Екатерина Иванова',
+		occupation: 'Директор ООО “Раз-два”',
+	},
+	{
+		text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore nihil ea ex dolores. Quos quo aspernatur possimus perspiciatis reprehenderit debitis corporis eius, deleniti, voluptate assumenda dolorem ad libero explicabo laborum qui aperiam aliquid quam repudiandae distinctio nisi voluptates hic quibusdam. Minus quas voluptate tempora ullam quam eaque iste quaerat a.',
+		img: './media/photo_1.png',
+		name: 'Наталья Петрова',
+		occupation: 'Директор ООО "Три-Четыре"',
+	},
+	{
+		text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti enim sit maxime! Fugiat cum aspernatur exercitationem dolorum quia repellendus autem fugit, rerum harum et saepe eaque ipsum similique quae beatae ut voluptatem delectus assumenda. Eum blanditiis culpa suscipit odio, eius consequuntur ratione, ducimus, optio facilis illo earum quae magnam dolorum!',
+		img: './media/photo_2.png',
+		name: 'Виктор Кудимов',
+		occupation: 'Директор ООО "Пять-Шесть"',
+	},
+	{
+		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur libero dolorem nihil amet odit impedit repellat id, velit blanditiis numquam suscipit explicabo porro assumenda repudiandae facere necessitatibus rem tenetur animi dolores laboriosam molestias, eius illum totam! Illo fugiat similique cum molestias fuga sint iusto, nam quae laborum, adipisci quia quidem!',
+		img: './media/photo_3.png',
+		name: 'Виктория Самойлова',
+		occupation: 'Директор ООО "Семь-Восемь"',
+	},
+];
+
+const reviews_container = document.querySelector('.reviews');
+const review_block = document.querySelector('.review_block');
+
+const review_content = document.createElement('div');
+review_content.className = 'review_content';
+
+const review_sign = document.createElement('div');
+review_sign.className = 'review_sign';
+
+const text = document.createElement('p');
+text.innerText = reviews[0].text;
+
+const photo = document.createElement('img');
+photo.alt = 'profile_photo';
+photo.src = reviews[0].img;
+
+const sign = document.createElement('p');
+const sign_span = document.createElement('span');
+sign_span.innerText = reviews[0].occupation;
+sign.append(reviews[0].name, ' ', sign_span);
+
+review_sign.append(photo, sign);
+review_content.append(text, review_sign);
+review_block.append(review_content);
+
+const review_slider = document.createElement('div');
+review_slider.className = 'review_slider';
+
+const review_triggers = document.createElement('div');
+review_triggers.className = 'review_triggers';
+
+const review_leftBtn = document.createElement('div');
+review_leftBtn.className = 'review_left_button';
+const review_leftArrow = document.createElement('img');
+review_leftArrow.src = './media/left.png';
+review_leftArrow.alt = 'left arrow';
+review_leftBtn.append(review_leftArrow);
+
+const review_rightBtn = document.createElement('div');
+review_rightBtn.className = 'review_right_button active';
+const review_rightArrow = document.createElement('img');
+review_rightArrow.src = './media/right.png';
+review_rightArrow.alt = 'right arrow';
+review_rightBtn.append(review_rightArrow);
+
+const review_btns = document.createElement('div');
+review_btns.className = 'review_btns';
+
+for (let i = 0; i < reviews.length; i++) {
+	const review_round_btn = document.createElement('button');
+	review_round_btn.className = 'review_round_btn';
+	review_btns.append(review_round_btn);
+	if (i >= 4) {
+		review_round_btn.style.display = 'none';
+	}
+}
+review_triggers.append(review_leftBtn, review_rightBtn);
+review_slider.append(review_btns, review_triggers);
+reviews_container.append(review_slider);
+
+let review_index = 0;
+
+review_rightBtn.onclick = () => {
+	if (review_index !== reviews.length - 1) {
+		review_index++;
+	} else {
+		review_index = 0;
+	}
+	review_rightBtn.classList.add('active');
+	review_leftBtn.classList.remove('active');
+	nextReview(review_index);
+	changeActiveReviewBtn();
+};
+
+review_leftBtn.onclick = () => {
+	if (review_index !== 0) {
+		review_index--;
+	} else {
+		review_index = reviews.length - 1;
+	}
+	review_rightBtn.classList.remove('active');
+	review_leftBtn.classList.add('active');
+	nextReview(review_index);
+	changeActiveReviewBtn();
+};
+
+function nextReview(index) {
+	const review = reviews[index];
+	text.innerText = review.text;
+	photo.src = review.img;
+	sign_span.innerText = review.occupation;
+	sign.innerText = review.name + ' ';
+	sign.append(sign_span);
+}
+
+function changeActiveReviewBtn() {
+	const allReviewBtns = document.querySelectorAll('.review_round_btn');
+	allReviewBtns.forEach((elem, index) => {
+		if (review_index === index) {
+			elem.classList.add('active');
+		} else {
+			elem.classList.remove('active');
+		}
+	});
+}
+changeActiveReviewBtn();
