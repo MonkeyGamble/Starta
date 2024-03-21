@@ -1,0 +1,96 @@
+// $font-weight: (
+// 	small: 10px,
+// 	medium: 20px,
+// 	large: 30px,
+// );
+
+$blue-color: blue;
+$green-color: green;
+$yellow-color: yellow;
+$small-font-size: 10px;
+$medium-font-size: 20px;
+$large-font-size: 30px;
+
+$items: (
+	item1: (
+		weights: (
+			weight1: (
+				font-weight: $small-font-size,
+			),
+			weight2: (
+				font-weight: $medium-font-size,
+			),
+			weight3: (
+				font-weight: $large-font-size,
+			),
+		),
+		colors: (
+			color1: (
+				color: $blue-color,
+			),
+			color2: (
+				color: $green-color,
+			),
+			color3: (
+				color: $yellow-color,
+			),
+		),
+	),
+	item2: (
+		weights: (
+			weight1: (
+				font-weight: 15px,
+			),
+			weight2: (
+				font-weight: 25px,
+			),
+			weight3: (
+				font-weight: 35px,
+			),
+		),
+		colors: (
+			color1: (
+				color: black,
+			),
+			color2: (
+				color: pink,
+			),
+			color3: (
+				color: orange,
+			),
+		),
+	),
+);
+
+// body {
+// 	font-weight: 20px;
+// 	color: gold;
+// }
+
+// body {
+// 	font-size: map-get(map-get($items, item2), font-weight);
+// 	color: map-get(map-get($items, item3), color);
+// }
+
+body {
+	font-size: map-get(
+		map-get(map-get(map-get($items, item2), weights), weight1),
+		$font-weight
+	);
+	color: map-get(
+		map-get(map-get(map-get($items, item2), colors), color1),
+		color
+	);
+}
+
+.main {
+	#{&}_paragraph {
+		//применяется к параграфу .main_paragraph только внутри .main
+		max-width: 80%;
+		margin: 10px auto;
+
+		&:hover {
+			color: pink;
+		}
+	}
+}

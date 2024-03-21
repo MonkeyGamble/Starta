@@ -1,1 +1,10 @@
-{"version":3,"sources":["../../Practice/SASS/styles.scss","styles.css"],"names":[],"mappings":"AAkDA;EACC,eAAA;EACA,WAAA;ACjDD","file":"styles.css"}
+{
+	"version": 3,
+	"sources": [
+		"../../dist/css/styles.scss",
+		"styles.css"
+	],
+	"names": [],
+	"mappings": "AAkDA;EACC,eAAA;EACA,WAAA;ACjDD",
+	"file": "styles.css"
+}

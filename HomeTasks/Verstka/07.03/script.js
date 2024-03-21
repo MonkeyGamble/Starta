@@ -3,17 +3,24 @@ const desktopWidth = window.innerWidth > 850;
 const header_content = document.querySelector('.header_content');
 
 const header_h = [
-	'Бухгалтерские услуги <br>в вашем городе',
-	'Бухгалтерские услуги <br>в городе № 2',
-	'Бухгалтерские услуги <br>в городе № 3',
-	'Бухгалтерские услуги <br>в городе № 4',
+	'Бухгалтерские услуги в вашем городе',
+	'Бухгалтерские услуги в городе № 2',
+	'Бухгалтерские услуги в городе № 3',
+	'Бухгалтерские услуги в городе № 4',
 ];
 
 const header_h_mobile = [
-	'Бухгалтерские услуги <br>в вашем любимом <br>городе',
-	'Бухгалтерские услуги <br>в вашем любимом <br>городе № 2',
-	'Бухгалтерские услуги <br>в вашем любимом <br>городе № 3',
-	'Бухгалтерские услуги <br>в вашем любимом <br>городе № 4',
+	'Бухгалтерские услуги в вашем любимом городе',
+	'Бухгалтерские услуги в вашем любимом городе № 2',
+	'Бухгалтерские услуги в вашем любимом городе № 3',
+	'Бухгалтерские услуги в вашем любимом городе № 4',
+];
+
+const h_button = [
+	'Наша презентация',
+	'Наша презентация № 2',
+	'Наша презентация № 3',
+	'Наша презентация № 4',
 ];
 
 const h2_item = document.createElement('h2');
@@ -28,7 +35,7 @@ header_content.append(h2_item);
 
 const header_button = document.createElement('div');
 header_button.className = 'header_button';
-header_button.innerText = 'Наша презентация';
+header_button.innerText = h_button[0];
 header_content.append(header_button);
 
 const slider = document.createElement('div');
@@ -70,6 +77,7 @@ let h2_index = 0;
 
 rightBtn.onclick = () => {
 	h2_item.style.opacity = 0;
+	header_button.style.opacity = 0;
 	setTimeout(() => {
 		if (h2_index !== header_h.length - 1) {
 			h2_index++;
@@ -80,6 +88,8 @@ rightBtn.onclick = () => {
 			? header_h[h2_index]
 			: header_h_mobile[h2_index];
 		h2_item.style.opacity = 1;
+		header_button.innerText = h_button[h2_index];
+		header_button.style.opacity = 1;
 		rightBtn.classList.add('active');
 		leftBtn.classList.remove('active');
 		changeActiveBtn();
@@ -88,6 +98,7 @@ rightBtn.onclick = () => {
 
 leftBtn.onclick = () => {
 	h2_item.style.opacity = 0;
+	header_button.style.opacity = 0;
 	setTimeout(() => {
 		if (h2_index !== 0) {
 			h2_index--;
@@ -97,7 +108,9 @@ leftBtn.onclick = () => {
 		h2_item.innerHTML = desktopWidth
 			? header_h[h2_index]
 			: header_h_mobile[h2_index];
+		header_button.innerText = h_button[h2_index];
 		h2_item.style.opacity = 1;
+		header_button.style.opacity = 1;
 		leftBtn.classList.add('active');
 		rightBtn.classList.remove('active');
 		changeActiveBtn();

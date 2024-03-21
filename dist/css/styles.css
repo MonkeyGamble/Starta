@@ -1,4 +1,22 @@
-body {
+/* body {
   font-size: 30px;
   color: blue;
-}/*# sourceMappingURL=styles.css.map */
+}*/
+/* 
+/* # sourceMappingURL=styles.css.map  */
+*/
+
+/* p {
+  max-width: 80%;
+  margin: 10px auto;
+} */
+
+/* .main div:nth-child(2) p {
+	max-width: 80%;
+	margin: 10px auto;
+} */
+
+.main:has(p) {
+	max-width: 80%;
+	margin: 10px auto;
+}
