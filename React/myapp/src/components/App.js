@@ -1,7 +1,7 @@
+import React from 'react';
 import Post from './Post';
 
-function App() {
-	let text = 'Hello world!';
+export default function App() {
 	let number = 10;
 	let classValue = 'test';
 
@@ -17,7 +17,7 @@ function App() {
 			<div>
 				<h1>{Math.random() * 100}</h1>
 				<p>{5 + 5}</p>
-				<p>{text}</p>
+				{/* <p>{text}</p> */}
 
 				<p>{number > 5 ? 'Число больше 5' : 'Число меньше или равно 5'}</p>
 			</div>
@@ -29,9 +29,24 @@ function App() {
 			</div>
 			{/* {Пример передачи props (свойств, аргументов) в дочерний компонент} */}
 			<div>
-				<Post title='Title 1' text='Some text for Post 1' />
-				<Post title='Title 2' text='Some text for Post 2' />
-				<Post title='Title 3' text='Some text for Post 3' />
+				<Post
+					title='Title 1'
+					text='Some text for Post 1'
+					color='red'
+					author='Alex'
+				/>
+				<Post
+					title='Title 2'
+					text='Some text for Post 2'
+					color='blue'
+					author='Neena'
+				/>
+				<Post
+					title='Title 3'
+					text='Some text for Post 3'
+					color='green'
+					author='Steven'
+				/>
 			</div>
 			{/* {Добавьте в компонент Post новый проп author, который будет содержать
 			имена атворов постов: // Alex, Neena, Steven // Эти имена укажите как
@@ -47,4 +62,3 @@ function App() {
 		</div>
 	);
 }
-export default App;

@@ -211,8 +211,14 @@ for (let i = 0; i < clients.length; i++) {
 	const clients_round_btn = document.createElement('button');
 	clients_round_btn.className = 'clients_round_btn';
 	clients_slider_btns.append(clients_round_btn);
-	if (i >= 4) {
-		clients_round_btn.style.display = 'none';
+	if (desktopWidth) {
+		if (i >= 4) {
+			clients_round_btn.style.display = 'none';
+		}
+	} else {
+		if (i >= 2) {
+			clients_round_btn.style.display = 'none';
+		}
 	}
 }
 

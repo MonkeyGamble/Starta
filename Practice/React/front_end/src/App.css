@@ -1,0 +1,11 @@
+.darkMode {
+	color: white;
+	background-color: black;
+	height: 100vh;
+}
+
+.lightMode {
+	color: black;
+	background-color: white;
+	height: 100vh;
+}
