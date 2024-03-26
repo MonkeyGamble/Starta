@@ -10,14 +10,19 @@ body {
 	font-family: ABeeZee, sans-serif;
 }
 
+.web_page {
+	width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+}
 .content_line {
 	width: 1140px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.header {
-	height: 840px;
+header {
+	height: 153px;
 	background-color: #f4f9e2;
 	padding: 17px 0 110px 0;
 }
@@ -56,32 +61,40 @@ body {
 	cursor: pointer;
 }
 
-.header_content {
-	margin-top: 113px;
+.main_content {
+	width: 100%;
+	background-color: #f4f9e2;
+	padding-bottom: 113px;
+}
+
+.main_text {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 90px;
+	gap: 92px;
 }
-.header_content div {
+
+.main_text div {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 }
 
-.header_content div p {
+.main_text div p {
 	font-size: 24px;
 	line-height: 1.773;
 	max-width: 570px;
+	color: #22356f;
 }
 
-.header_content h1 {
+.main_text h1 {
 	font-size: 48px;
 	font-style: italic;
 	font-weight: 300;
 	letter-spacing: -0.035;
+	color: #22356f;
 }
 
 .offer {
@@ -117,5 +130,91 @@ body {
 	color: white;
 	max-width: 586px;
 	text-align: justify;
+	line-height: 1.478;
+}
+
+.slogan {
+	height: 633px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+}
+
+.slogan p {
+	max-width: 700px;
+	font-size: 24px;
+	line-height: 1.418;
+	letter-spacing: 0.005;
+	font-style: italic;
+	color: #22356f;
+}
+.grid_cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+.grid_box {
+	height: 480px;
+	position: relative;
+}
+
+.grid_box p {
+	position: absolute;
+	top: 126px;
+	left: 70px;
+	max-width: 264px;
+	font-size: 32px;
+	font-style: italic;
+	color: white;
+	font-weight: 300;
+	line-height: 1.064;
+	letter-spacing: -0.006;
+}
+
+.grid_box hr {
+	position: absolute;
+	top: 96px;
+	left: 70px;
+	width: 340px;
+	border: 1px solid white;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* position: relative; */
+	height: 800px;
+	/* padding: 242px 0 265px 0; */
+}
+
+.footer img {
+	/* position: absolute;
+	left: 0;
+	top: 0; */
+	width: 637px;
+	height: 800px;
+	background-size: cover;
+	background-position: center;
+	margin-right: 67px;
+}
+
+.footer h2 {
+	font-size: 36px;
+	letter-spacing: -0.006;
+	font-style: italic;
+	font-weight: 300;
+	color: #22356f;
+	margin-bottom: 49px;
+}
+
+.footer p {
+	font-size: 36px;
+	font-style: italic;
+	font-weight: 300;
+	color: #22356f;
+	max-width: 676px;
+	text-align: left;
 	line-height: 1.478;
 }
