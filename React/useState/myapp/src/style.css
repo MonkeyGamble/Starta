@@ -11,3 +11,34 @@ button {
 	color: white;
 	border: none;
 }
+
+.light {
+	margin: 10px 0px;
+	padding: 10px;
+	background-color: rgb(42, 227, 200);
+	color: black;
+}
+
+.dark {
+	margin: 10px 0px;
+	padding: 10px;
+	background-color: rgb(28, 68, 62);
+	color: white;
+}
+
+.user_wrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 200px);
+	gap: 30px;
+}
+
+.user_wrapper > div {
+	margin: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 15px;
+}
