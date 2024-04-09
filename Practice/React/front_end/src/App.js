@@ -1,24 +1,41 @@
-import './App.css';
-import BackEnd from './BackEnd';
-import About from './components/About';
+import React from 'react';
+import { useState } from 'react';
 
-function App() {
-	// let list = ['red', 'yellow', 'green', 'black', 'blue'];
+export default function App() {
+	const [fullName, setFullName] = useState({ firstName: '', lastName: '' });
 
-	// let object = { a: 1, b: 2, c: 3 };
-	// const { var1, var2, var3 } = object;
-	// console.log(var1);
+	const handleSubmit = e => {
+		e.preventDefault();
+		console.log(fullName);
+		setFullName({
+			firstName: '',
+			lastName: '',
+		});
+	};
+
+	const handleFirstName = e => {
+		setFullName({ ...fullName, firstName: e.target.value });
+	};
+
+	const handleLastName = e => {
+		setFullName({ ...fullName, lastName: e.target.value });
+	};
 
 	return (
 		<div>
-			{/* <ul>
-				{list.map(item => (
-					<li style={{ color: item }}>{item}</li>
-				))}
-			</ul> */}
-			{/* <About firstname='David' lastname='Gogiashvili' /> */}
+			<form onSubmit={handleSubmit}>
+				<input
+					onChange={handleFirstName}
+					value={fullName.firstName}
+					name='firstName'
+				/>
+				<input
+					onChange={handleLastName}
+					value={fullName.lastName}
+					name='lastName'
+				/>
+				<input type='submit' className='input_button' />
+			</form>
 		</div>
 	);
 }
-
-export default App;

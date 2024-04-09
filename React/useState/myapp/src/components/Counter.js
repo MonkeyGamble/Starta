@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 export default function Counter() {
 	// let [state, setState] =  useState(default state)
+
 	let [count, setCount] = useState(0);
 
 	function increment() {
