@@ -1,0 +1,30 @@
+.header {
+  background-color: #141024;
+  color: white;
+  padding: 30px 0;
+}
+
+.header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  font-size: 20px;
+}
+
+.header > div p:first-child {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.header > div p:last-child {
+  font-size: 30px;
+  font-weight: 600;
+}
