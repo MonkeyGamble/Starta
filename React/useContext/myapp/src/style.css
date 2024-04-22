@@ -1,0 +1,64 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.header {
+	padding: 40px 80px;
+	background-color: orange;
+}
+
+.header > button {
+	background: none;
+	border: 1px solid black;
+	padding: 10px 20px;
+	border-radius: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 250ms;
+}
+
+.header > button:hover {
+	transform: scale(1.1);
+	color: white;
+}
+
+.header > button:active {
+	transform: scale(0.9);
+	background-color: aqua;
+	color: orange;
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+	margin: 20px;
+	height: 100vh;
+}
+.counter.light {
+	border: 1px solid black;
+	padding: 10px;
+}
+.counter.dark {
+	border: 1px solid rgb(245, 241, 241);
+	padding: 10px;
+}
+.header.light {
+	background-color: orange;
+	color: black;
+}
+.content.light {
+	background-color: white;
+	color: black;
+}
+
+.header.dark {
+	background-color: rgb(43, 43, 43);
+	color: white;
+}
+
+.dark {
+	background-color: rgb(61, 61, 61);
+	color: white;
+}

@@ -2,36 +2,12 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 
 export default function App() {
-	const [count, setCount] = useState(0);
-
-	useEffect(() => {
-		console.log('hi');
-	}, [count]);
+	const [check, setCheck] = useState(true);
 
 	return (
 		<div>
-			{count}
-			<button
-				onClick={() => {
-					setCount(count + 1);
-				}}
-			>
-				+
-			</button>
-			<button
-				onClick={() => {
-					setCount(count - 1);
-				}}
-			>
-				-
-			</button>
-			<button
-				onClick={() => {
-					setCount(0);
-				}}
-			>
-				Reset
-			</button>
+			<button onClick={() => setCheck(!check)}>Change Visible</button>
+			<div>{check && <button>Click!</button>}</div>
 		</div>
 	);
 }
