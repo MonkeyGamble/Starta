@@ -2,7 +2,7 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 export default function TodoList(props) {
-	const { todos, changeTodo, removeTodo } = props;
+	const { todos } = props;
 	return (
 		<div>
 			{todos.map(elem => (
@@ -11,8 +11,6 @@ export default function TodoList(props) {
 					id={elem.id}
 					title={elem.title}
 					completed={elem.completed}
-					changeTodo={changeTodo}
-					removeTodo={removeTodo}
 				/>
 			))}
 		</div>

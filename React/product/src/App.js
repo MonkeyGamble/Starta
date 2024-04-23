@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import TodoList from './components/TodoList';
 import AddForm from './components/AddForm';
+import { TodoContext } from './context/TodoContext';
 
 export default function App() {
 	const start_todo = [
@@ -51,12 +52,14 @@ export default function App() {
 
 	return (
 		<div>
-			<AddForm addTodo={addTodo} />
-			<TodoList
-				todos={todos}
-				changeTodo={changeTodo}
-				removeTodo={doubleClickRemove}
-			/>
+			<TodoContext.Provider value={{ changeTodo, doubleClickRemove }}>
+				<AddForm addTodo={addTodo} />
+				<TodoList
+					todos={todos}
+					// changeTodo={changeTodo}
+					// removeTodo={doubleClickRemove}
+				/>
+			</TodoContext.Provider>
 		</div>
 	);
 }
