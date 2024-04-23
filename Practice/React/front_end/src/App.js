@@ -1,13 +1,27 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function App() {
-	const [check, setCheck] = useState(true);
+	const [variable, setVariable] = useState([]);
+
+	useEffect(() => {
+		fetch('https://jsonplaceholder.typicode.com/posts')
+			.then(response => response.json())
+			.then(json => setVariable(json));
+	}, []);
 
 	return (
 		<div>
-			<button onClick={() => setCheck(!check)}>Change Visible</button>
-			<div>{check && <button>Click!</button>}</div>
+			<ul>
+				{variable &&
+					variable.map(elem => {
+						return (
+							<div key={elem.id}>
+								<h2>Title: {elem.title}</h2>
+								<h4>Body: {elem.body}</h4>
+							</div>
+						);
+					})}
+			</ul>
 		</div>
 	);
 }
