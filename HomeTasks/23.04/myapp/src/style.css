@@ -1,0 +1,61 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.product_container {
+	display: grid;
+	grid-template-columns: repeat(3, 300px);
+	gap: 25px;
+}
+
+.product_item {
+	margin: 25px;
+	background-color: rgb(130, 59, 211);
+	color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 300px;
+	height: 150px;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.product_wrapper > button {
+	width: 950px;
+	height: 50px;
+	margin: 25px;
+	background-color: coral;
+	border-radius: 25px;
+	border: none;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.count {
+	display: flex;
+	gap: 50px;
+}
+
+.count > button {
+	width: 25px;
+	height: 25px;
+	font-weight: bold;
+	border-radius: 25px;
+	border: none;
+	background-color: white;
+	color: black;
+	cursor: pointer;
+}
+
+.delete_button {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 25px;
+	cursor: pointer;
+}
