@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ProductListPage() {
 	const [products, setProducts] = useState([]);
@@ -14,7 +14,11 @@ export default function ProductListPage() {
 		<div className='content'>
 			<ul>
 				{products.map(elem => (
-					<li key={elem.id}>{`${elem.id}. ${elem.title}`}</li>
+					<li key={elem.id}>
+						<Link to={`/products/${elem.id}`}>
+							{`${elem.id}. ${elem.title}`}
+						</Link>
+					</li>
 				))}
 			</ul>
 		</div>

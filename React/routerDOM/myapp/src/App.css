@@ -45,3 +45,23 @@ header {
 	list-style-type: none;
 	font-size: 14px;
 }
+
+.product {
+	display: flex;
+}
+.product > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	margin: 10px;
+}
+
+.content a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.menu_wrapper a.active {
+	color: brown;
+}

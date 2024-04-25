@@ -1,8 +1,18 @@
 import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function NotFoundPage() {
+	const navigate = useNavigate();
+
+	// setTimeout(() => {
+	// 	navigate('/');
+	// }, 2000);
+	const location = useLocation();
+	console.log(location);
 	return (
 		<div className='content'>
+			<button onClick={() => navigate(-1)}>Go Back</button>
+			<button onClick={() => navigate('/')}>Go Home</button>
 			<img
 				width={200}
 				height={300}

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Header() {
 	return (
@@ -7,16 +6,16 @@ export default function Header() {
 			<div className='logo'></div>
 			<ul className='menu_wrapper'>
 				<li>
-					<Link to='/'>Home</Link>
+					<NavLink to='/'>Home</NavLink>
 				</li>
 				<li>
-					<Link to='/products'>Products</Link>
+					<NavLink to='/products'>Products</NavLink>
 				</li>
 				<li>
-					<Link to='/about'>About</Link>
+					<NavLink to='/about'>About</NavLink>
 				</li>
 				<li>
-					<Link to='/contacts'>Contacts</Link>
+					<NavLink to='/contacts'>Contacts</NavLink>
 				</li>
 			</ul>
 		</header>
