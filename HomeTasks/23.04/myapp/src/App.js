@@ -1,7 +1,5 @@
-import React from 'react';
 import './style.css';
-import ProductList from './components/ProductList';
-import { ProductContext } from '../src/context/ProductContext';
+import ProductItem from './components/ProductItem';
 import { useState } from 'react';
 
 export default function App() {
@@ -12,19 +10,52 @@ export default function App() {
 		{ id: 4, name: 'Сноуборд', price: 19000, count: 4 },
 	];
 
-	const [products, setProducts] = useState(data);
+	const [dataArray, setDataArray] = useState(data);
+
+	const addProductItem = e => {
+		e.preventDefault();
+		const name = prompt('Введите название товара:');
+		const price = prompt('Введите цену товара:');
+		const count = prompt('Введите кол-во товара:');
+
+		if (name && price && count) {
+			const newItem = {
+				id: dataArray.length + 1,
+				name,
+				price: +price,
+				count: +count,
+			};
+			setDataArray([...dataArray, newItem]);
+		} else {
+			alert('Вы заполнили не все поля!');
+		}
+	};
 
 	const removeItem = id => {
-		let filteredProducts = data.filter(elem => elem.id !== id);
-		setProducts(filteredProducts);
+		let newDataArray = dataArray.filter(elem => {
+			return elem.id !== id;
+		});
+		setDataArray(newDataArray);
 	};
 
 	return (
-		<div className='product_wrapper'>
-			<ProductContext.Provider value={{ removeItem }}>
-				<ProductList data={products} />
-				<button>Add Product</button>
-			</ProductContext.Provider>
+		<div className='wrapper'>
+			<div className='product_container'>
+				{dataArray.map(elem => (
+					<div key={elem.id}>
+						<ProductItem
+							id={elem.id}
+							name={elem.name}
+							price={elem.price}
+							count={elem.count}
+							remove={removeItem}
+						/>
+					</div>
+				))}
+			</div>
+			<button className='add_item_button' onClick={addProductItem}>
+				Add an Item
+			</button>
 		</div>
 	);
 }
