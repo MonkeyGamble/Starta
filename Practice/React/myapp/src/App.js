@@ -1,38 +1,59 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import AnotherPage from './pages/AnotherPage';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './App.css';
+import { useState, useRef, useEffect } from 'react';
 
 export default function App() {
-	const [check, setCheck] = useState(false);
+	const [color, setColor] = useState('black');
+	const squareRef = useRef(null);
 
-	const onnOff = () => {
-		setCheck(!check);
-	};
-
-	const click = () => {
-		console.log('Was clicked!');
+	const changeColor = color => {
+		setColor(color);
 	};
 
 	useEffect(() => {
-		document.addEventListener('mousedown', click);
-		return () => {
-			document.removeEventListener('mousedown', click);
-		};
+		document.addEventListener('mousedown', e => {
+			if (!squareRef.current.contains(e.target)) setColor('black');
+		});
 	}, []);
 
 	return (
-		<Router>
-			<div>
-				{/* <button onClick={onnOff}>Button</button>
-				{check && <p>INFO</p>} */}
-				<button>
-					<Link to='/another'>Go Away</Link>
+		<div>
+			<div className='buttons'>
+				<button
+					className='red_button all_buttons'
+					onClick={() => changeColor('red')}
+				>
+					Red
 				</button>
-				<Routes>
-					<Route path='/another' element={<AnotherPage />}></Route>
-				</Routes>
+				<button
+					className='blue_button all_buttons'
+					onClick={() => changeColor('blue')}
+				>
+					Blue
+				</button>
+				<button
+					className='green_button all_buttons'
+					onClick={() => changeColor('green')}
+				>
+					Green
+				</button>
+				<button
+					className='yellow_button all_buttons'
+					onClick={() => changeColor('yellow')}
+				>
+					Yellow
+				</button>
+				<button
+					className='purple_button all_buttons'
+					onClick={() => changeColor('purple')}
+				>
+					Purple
+				</button>
 			</div>
-		</Router>
+			<div
+				className='black_square'
+				style={{ backgroundColor: color }}
+				ref={squareRef}
+			></div>
+		</div>
 	);
 }
