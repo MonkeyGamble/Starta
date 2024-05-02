@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.form_wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+form {
+	margin: 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+label {
+	display: flex;
+	flex-direction: column;
+}
+
+input {
+	width: 300px;
+}
+p {
+	color: red;
+	font-size: 10px;
+}
+
+input.error {
+	border: 1px solid red;
+	border-radius: 5px;
+}
+
+input.error:focus {
+	outline: 1px solid red;
+}
+
+label::before {
+	content: '*';
+}
