@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'Heebo';
+}
+
+.content_line {
+	max-width: 1152px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.menu_wrapper {
+	display: flex;
+	justify-content: end;
+	gap: 26px;
+	margin-top: 27px;
+	margin-right: 60px;
+}
+
+.menu_wrapper li {
+	list-style-type: none;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.nav_link {
+	color: black;
+}
+
+.nav_link.active {
+	color: red;
+}

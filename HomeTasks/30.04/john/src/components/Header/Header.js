@@ -1,22 +1,31 @@
 import { NavLink } from 'react-router-dom';
+import s from './Header.module.css';
 
 export default function Header() {
 	return (
 		<div>
-			<header>
+			<header className={s.content_line}>
 				<nav>
-					<ul className='menu_wrapper'>
+					<ul className={s.menu_wrapper}>
 						<li>
-							<NavLink to='/'>Home</NavLink>
+							<NavLink className='nav_link' to='/'>
+								Home
+							</NavLink>
 						</li>
 						<li>
-							<NavLink to='/works'>Works</NavLink>
+							<NavLink className='nav_link' to='/works'>
+								Works
+							</NavLink>
 						</li>
 						<li>
-							<NavLink to='/blog'>Blog</NavLink>
+							<NavLink className='nav_link' to='/blog'>
+								Blog
+							</NavLink>
 						</li>
 						<li>
-							<NavLink to='/contact'>Contact</NavLink>
+							<NavLink className='nav_link' to='/contact'>
+								Contact
+							</NavLink>
 						</li>
 					</ul>
 				</nav>
