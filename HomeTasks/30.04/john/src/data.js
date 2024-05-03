@@ -4,14 +4,14 @@ export const blog_data = [
 		title: 'Making a design system from scratch',
 		text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
 		tags: ['Design', 'Pattern'],
-		date: '2020-04-22',
+		date: '22 Apr 2020',
 	},
 	{
 		id: 2,
 		title: 'Creating pixel perfect icons in Figma',
 		text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
 		tags: ['Figma', 'Icon Design'],
-		date: '2020-01-05',
+		date: '5 Jan 2020 ',
 	},
 	{
 		id: 3,

@@ -21,7 +21,9 @@ export default function RecentPosts() {
 				</div>
 
 				<div className={s.recent_boxes}>
-					blogData.map(elem => {<PostItem key={elem.id} {...elem} />});
+					{blogData.map(elem => (
+						<PostItem key={elem.id} {...elem} />
+					))}
 				</div>
 			</div>
 		</div>

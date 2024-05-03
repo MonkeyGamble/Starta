@@ -26,6 +26,11 @@ h1 {
 
 .featured_block {
 	display: flex;
+	flex-direction: column;
+	gap: 43px;
+}
+.items_wrapper {
+	display: flex;
 	gap: 18px;
 	justify-content: space-between;
 	align-items: center;
@@ -33,21 +38,28 @@ h1 {
 	padding-bottom: 47px;
 }
 
-.featured_block img {
-	width: 246px;
-	height: 180px;
+.items_wrapper img {
+	max-width: 246px;
+	max-height: 180px;
+	width: auto;
+	height: auto;
 	border-radius: 6px;
-	background-color: #ff6464;
 }
-.featured_works h3 {
+.items_wrapper h3 {
 	font-size: 22px;
 	font-weight: 400;
 	margin-bottom: 15px;
 }
 
+.block_content {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
 .block_content h2 {
 	font-size: 30px;
 	font-weight: bold;
+	margin-bottom: 0;
 }
 
 .year {
@@ -61,15 +73,12 @@ h1 {
 	font-weight: 700;
 }
 
-.block_content {
-	display: flex;
-	flex-direction: column;
-	gap: 23px;
-}
-
-.block_content p {
+a .block_content p {
 	max-width: 418px;
 	font-size: 16px;
+	font-weight: 400;
+	text-align: left;
+	color: #21243d;
 }
 
 .featured_block h4 {

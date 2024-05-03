@@ -1,12 +1,16 @@
-import s from './DesigningDashboardsPage.module.css';
+import s from './WorksDetailPage.css';
+import { work_data } from '../../../data';
+import { useParams } from 'react-router-dom';
 
 export default function DesigningDashboardsPage() {
+	const { id } = useParams(0);
+
 	return (
 		<div className={`${s.design_wrapper} ${s.content_line}`}>
-			<h1>Designing Dashboards with usability in mind</h1>
+			<h1>{work_data[id - 1].title}</h1>
 			<div className={s.year_wrapper}>
-				<div className={s.year}>2020</div>
-				<p>Dashboard, User Experience Design</p>
+				<div className={s.year}>{work_data[id - 1].year}</div>
+				<p>{work_data[id - 1].year}</p>
 			</div>
 			<p>
 				Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
