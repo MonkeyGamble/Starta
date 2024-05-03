@@ -1,4 +1,5 @@
 import s from './Footer.module.css';
+import instagram from '../../assets/insta.png';
 
 export default function Footer() {
 	return (
@@ -16,7 +17,8 @@ export default function Footer() {
 					target='_blank'
 					rel='noopener noreferrer'
 				>
-					<div className={`${s.instagram} ${s.logos}`}></div>
+					{/* <div className={`${s.instagram} ${s.logos}`}></div> */}
+					<img src={instagram} alt='' />
 				</a>
 				<a
 					href='https://www.twitter.com'

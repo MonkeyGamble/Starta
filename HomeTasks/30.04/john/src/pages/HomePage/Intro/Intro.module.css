@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'Heebo';
+}
+
+.content_line {
+	max-width: 858px;
+	margin: 0 auto;
+}
+.intro {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 160px;
+}
+
+.text_content {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+.text_content h1 {
+	font-size: 44px;
+	font-weight: bold;
+	max-width: 438px;
+	line-height: 60px;
+}
+
+.text_content p {
+	max-width: 497px;
+	font-size: 16px;
+	text-align: left;
+}
+
+.text_content button {
+	width: 208px;
+	height: 47px;
+	background-color: #ff6464;
+	font-size: 20px;
+	font-weight: 500;
+	color: white;
+	border: none;
+	border-radius: 0;
+}
