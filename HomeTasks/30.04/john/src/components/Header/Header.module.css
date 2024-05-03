@@ -26,10 +26,6 @@
 	font-weight: 500;
 }
 
-.nav_link {
-	color: black;
-}
-
-.nav_link.active {
+.navlink {
 	color: red;
 }

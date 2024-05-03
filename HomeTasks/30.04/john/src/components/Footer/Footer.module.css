@@ -1,0 +1,53 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'Heebo';
+}
+.content_line {
+	max-width: 856px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footer_wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 26px;
+	justify-content: center;
+	align-items: center;
+	padding-top: 51px;
+	padding-bottom: 54px;
+}
+
+.socials {
+	display: flex;
+	gap: 35px;
+}
+
+.logos {
+	width: 30px;
+	height: 30px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+.facebook {
+	background-image: url('../../assets/fb.png');
+}
+.instagram {
+	background-image: url('../../assets/insta.png');
+}
+.twitter {
+	background-image: url('../../assets/x.png');
+}
+.linkedin {
+	background-image: url('../../assets/Linkedin.png');
+}
+
+.footer_wrapper p {
+	font-size: 14px;
+}

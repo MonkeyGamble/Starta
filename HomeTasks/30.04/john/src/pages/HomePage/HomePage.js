@@ -17,8 +17,19 @@ export default function HomePage() {
 			</div>
 			<div className={s.recent_posts}>
 				<div className={`${s.content_line} ${s.posts}`}>
-					<div className={s.recent_left}>
+					<div
+						style={{
+							display: 'flex',
+							justifyContent: 'space-between',
+							alignItems: 'flex-end',
+							marginBottom: '20px',
+						}}
+					>
 						<h3>Recent posts</h3>
+						<a href='/works'>View all</a>
+					</div>
+
+					<div className={s.recent_boxes}>
 						<div className={s.box}>
 							<h2>Making a design system from scratch</h2>
 							<div className={s.box_content}>
@@ -32,9 +43,6 @@ export default function HomePage() {
 								Exercitation veniam consequat sunt nostrud amet.
 							</p>
 						</div>
-					</div>
-					<div className={s.recent_right}>
-						<a href='#'>View all</a>
 						<div className={s.box}>
 							<h2>Creating pixel perfect icons in Figma</h2>
 							<div className={s.box_content}>
@@ -54,14 +62,19 @@ export default function HomePage() {
 
 			<div className={`${s.featured_works} ${s.content_line}`}>
 				<h3>Featured works</h3>
+
 				<div className={s.featured_block}>
 					<img src='../../assets/Rectangle 30.png' alt='pic1' />
+
 					<div className={s.block_content}>
 						<h2>Designing Dashboards</h2>
-						<div style={{ display: 'flex', gap: '26px' }}>
+
+						<div style={{ display: 'flex', gap: '26px', alignItems: 'center' }}>
 							<div className={s.year}>2020</div>
+
 							<h4>Dashboard</h4>
 						</div>
+
 						<p>
 							Amet minim mollit non deserunt ullamco est sit aliqua dolor do
 							amet sint. Velit officia consequat duis enim velit mollit.
@@ -69,8 +82,45 @@ export default function HomePage() {
 						</p>
 					</div>
 				</div>
-				<div className={s.featured_block}></div>
-				<div className={s.featured_block}></div>
+
+				<div className={s.featured_block}>
+					<img src='../../assets/Rectangle 32.png' alt='pic2' />
+
+					<div className={s.block_content}>
+						<h2>Vibrant Portraits of 2020</h2>
+
+						<div style={{ display: 'flex', gap: '26px', alignItems: 'center' }}>
+							<div className={s.year}>2018</div>
+
+							<h4>Illustration</h4>
+						</div>
+
+						<p>
+							Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+							amet sint. Velit officia consequat duis enim velit mollit.
+							Exercitation veniam consequat sunt nostrud amet.
+						</p>
+					</div>
+				</div>
+				<div className={s.featured_block}>
+					<img src='../../assets/Rectangle 34.png' alt='pic3' />
+
+					<div className={s.block_content}>
+						<h2>36 Days of Malayalam type</h2>
+
+						<div style={{ display: 'flex', gap: '26px', alignItems: 'center' }}>
+							<div className={s.year}>2018</div>
+
+							<h4>Typography</h4>
+						</div>
+
+						<p>
+							Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+							amet sint. Velit officia consequat duis enim velit mollit.
+							Exercitation veniam consequat sunt nostrud amet.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

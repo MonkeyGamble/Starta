@@ -8,22 +8,22 @@ export default function Header() {
 				<nav>
 					<ul className={s.menu_wrapper}>
 						<li>
-							<NavLink className='nav_link' to='/'>
+							<NavLink className={s.navlink} to='/'>
 								Home
 							</NavLink>
 						</li>
 						<li>
-							<NavLink className='nav_link' to='/works'>
+							<NavLink className={s.navlink} to='/works'>
 								Works
 							</NavLink>
 						</li>
 						<li>
-							<NavLink className='nav_link' to='/blog'>
+							<NavLink className={s.navlink} to='/blog'>
 								Blog
 							</NavLink>
 						</li>
 						<li>
-							<NavLink className='nav_link' to='/contact'>
+							<NavLink className={s.navlink} to='/contact'>
 								Contact
 							</NavLink>
 						</li>

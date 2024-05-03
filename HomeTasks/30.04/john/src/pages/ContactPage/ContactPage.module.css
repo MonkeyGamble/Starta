@@ -1,0 +1,85 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'Heebo';
+}
+.content_line {
+	max-width: 682px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.contact_wrapper {
+	margin-top: 62px;
+	margin-bottom: 53px;
+}
+h2 {
+	font-size: 44px;
+	font-weight: 900;
+	margin-bottom: 40px;
+}
+
+.contact {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	margin-bottom: 25px;
+}
+
+.box {
+	width: 200px;
+	height: 300px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 15px;
+	background-color: rgb(245, 242, 240);
+}
+
+.pics {
+	width: 100px;
+	height: 100px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.email {
+	background-image: url('../../assets/mail.svg');
+}
+.phone {
+	background-image: url('../../assets/phone.svg');
+}
+.chat {
+	background-image: url('../../assets/chat.svg');
+}
+
+button {
+	padding: 5px 15px;
+	border: none;
+	cursor: pointer;
+	background-color: coral;
+	border-radius: 10px;
+	color: white;
+	font-weight: 600;
+}
+
+a {
+	color: coral;
+	font-weight: 600;
+}
+
+p {
+	font-size: 12px;
+	text-align: center;
+}
+
+.address {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
