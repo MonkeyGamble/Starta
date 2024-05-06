@@ -1,4 +1,5 @@
 import s from './RecentPosts.module.css';
+import { Link } from 'react-router-dom';
 
 export default function PostItem(props) {
 	const { title, text, tags, date } = props;
@@ -8,7 +9,9 @@ export default function PostItem(props) {
 	return (
 		<div>
 			<div className={s.box}>
-				<h2>{title}</h2>
+				<h2>
+					<Link to='/blog'>{title}</Link>
+				</h2>
 				<div className={s.box_content}>
 					<p>{date}</p>
 					<p>|</p>

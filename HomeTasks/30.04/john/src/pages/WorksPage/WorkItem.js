@@ -1,7 +1,7 @@
 import s from './WorksPage.module.css';
 
 export default function WorkItem(props) {
-	const { id, title, tags, main_img, year, text } = props;
+	const { title, tags, main_img, year, text } = props;
 	const tags_string = tags.join(', ');
 	return (
 		<div className={s.items_wrapper}>

@@ -18,21 +18,21 @@ export const blog_data = [
 		title: 'UI Interactions of the week',
 		text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
 		tags: ['Express', 'Handlebars'],
-		date: '2019-11-12',
+		date: '12 Nov 2019',
 	},
 	{
 		id: 4,
 		title: 'The Ultimate Guide to the Top N Lessons',
 		text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
 		tags: ['School', 'Lessons'],
-		date: '2019-10-10',
+		date: '10 Oct 2019',
 	},
 	{
 		id: 5,
 		title: 'How to Troubleshoot Auto Issues',
 		text: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.',
 		tags: ['Auto', 'Mechanic'],
-		date: '2019-05-09',
+		date: '9 May 2019',
 	},
 ];
 

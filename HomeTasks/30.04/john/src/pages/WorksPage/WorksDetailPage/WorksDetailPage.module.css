@@ -10,27 +10,31 @@
 	margin-left: auto;
 	margin-right: auto;
 }
-.design_wrapper {
+
+.details_wrapper {
 	margin-top: 110px;
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 27px;
 }
 
-.design_wrapper h1 {
-	max-width: 400px;
+.details_wrapper h1 {
+	max-width: 450px;
 	font-size: 34px;
 	font-weight: bold;
-	margin-bottom: 38px;
+	margin-bottom: 34px;
 }
 
+.details_wrapper p {
+	font-size: 16px;
+	text-align: left;
+}
 .year_wrapper {
 	display: flex;
 	gap: 17px;
 	align-items: center;
 	margin-bottom: 30px;
 }
-
 .year {
 	width: 62px;
 	height: 25px;
@@ -46,30 +50,27 @@
 	font-size: 20px;
 }
 
-.design_wrapper img {
+.details_wrapper img {
 	width: 680px;
 	height: 460px;
-	background-color: coral;
-}
-
-.design_wrapper .pic1 {
 	margin-top: 46px;
 	margin-bottom: 70px;
+	object-fit: contain;
 }
 
-.design_wrapper h2 {
+.details_wrapper h2 {
 	font-size: 30px;
 	font-weight: 500;
 	margin-bottom: 20px;
 }
 
-.design_wrapper h3 {
+.details_wrapper h3 {
 	font-size: 24px;
 	font-weight: 500;
 	margin-bottom: 26px;
 }
 
-.design_wrapper .pic2 {
+.details_wrapper .pic2 {
 	margin-top: 34px;
 	margin-bottom: 27px;
 }

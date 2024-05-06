@@ -7,7 +7,7 @@
 }
 
 .content_line {
-	max-width: 1032px;
+	max-width: 681px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -40,10 +40,12 @@ h1 {
 .blog_section h2 {
 	font-size: 30px;
 	font-weight: 500;
+	margin-bottom: 0;
 }
 
 .text {
 	font-size: 16px;
+	text-align: left;
 }
 
 .blog_content {

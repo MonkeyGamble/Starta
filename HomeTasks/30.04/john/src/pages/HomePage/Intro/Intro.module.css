@@ -45,3 +45,8 @@
 	border: none;
 	border-radius: 0;
 }
+
+.text_content button:focus {
+	scale: 1.1;
+	transition: 1s ease;
+}

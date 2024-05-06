@@ -1,0 +1,12 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'Heebo';
+}
+
+.blog_section h2 {
+	max-width: 500px;
+	font-size: 100px;
+}

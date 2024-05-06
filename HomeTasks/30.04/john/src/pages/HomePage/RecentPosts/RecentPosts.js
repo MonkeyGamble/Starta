@@ -1,6 +1,7 @@
 import s from './RecentPosts.module.css';
 import { blog_data } from '../../../data';
 import PostItem from './PostItem';
+import { Link } from 'react-router-dom';
 
 export default function RecentPosts() {
 	const blogData = blog_data.slice(0, 2);
@@ -17,7 +18,8 @@ export default function RecentPosts() {
 					}}
 				>
 					<h3>Recent posts</h3>
-					<a href='/blog'>View all</a>
+
+					<Link to='/blog'>View all</Link>
 				</div>
 
 				<div className={s.recent_boxes}>
