@@ -6,7 +6,7 @@ export default function NotFoundPage() {
 
 	setTimeout(() => {
 		navigate('/');
-	}, 20000);
+	}, 5000);
 
 	const location = useLocation();
 	console.log(location);

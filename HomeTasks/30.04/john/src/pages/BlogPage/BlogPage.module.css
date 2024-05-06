@@ -60,3 +60,25 @@ h1 {
 .blog_content p:last-child {
 	color: #8695a4;
 }
+
+@media (max-width: 375px) {
+	.content_line {
+		max-width: 340px;
+	}
+	.blog_wrapper {
+		margin-top: 120px;
+	}
+	.blog_wrapper h1 {
+		color: #21243d;
+		font-size: 30px;
+	}
+	.blogs {
+		gap: 20px;
+	}
+	.blog_section h2 {
+		font-size: 26px;
+	}
+	.blog_content {
+		gap: 14px;
+	}
+}

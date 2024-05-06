@@ -30,3 +30,17 @@
 	width: 200px;
 	padding: 10px;
 }
+
+@media (max-width: 375px) {
+	.content_line {
+		max-width: 354px;
+	}
+	.content h2 {
+		font-size: 30px;
+	}
+
+	.buttons {
+		flex-direction: column;
+		gap: 10px;
+	}
+}

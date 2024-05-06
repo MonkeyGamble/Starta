@@ -3,7 +3,10 @@ import { work_data } from '../../../data';
 import FeaturedItem from './FeaturedItem';
 
 export default function FeaturedWorks() {
-	const workData = work_data.slice(0, 3);
+	const screen_width = window.innerWidth;
+
+	const workData =
+		screen_width > 375 ? work_data.slice(0, 3) : work_data.slice(0, 1);
 
 	return (
 		<div className={`${s.featured_works} ${s.content_line}`}>

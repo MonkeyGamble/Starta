@@ -4,6 +4,11 @@ import selfie from '../../../assets/photo_1.png';
 export default function Intro() {
 	return (
 		<div className={`${s.intro} ${s.content_line}`}>
+			<div className={s.intro_image}>
+				<img src={selfie} alt='selfie' className={s.selfie} />
+				<div className={s.circle}></div>
+			</div>
+
 			<div className={s.text_content}>
 				<h1>Hi, I am John, Creative Technologist</h1>
 				<p>
@@ -13,7 +18,6 @@ export default function Intro() {
 				</p>
 				<button>Download Resume</button>
 			</div>
-			<img src={selfie} alt='selfie' />
 		</div>
 	);
 }

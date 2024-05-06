@@ -10,7 +10,7 @@ export default function WorkItem(props) {
 			<div className={s.block_content}>
 				<h2>{title}</h2>
 
-				<div style={{ display: 'flex', gap: '26px', alignItems: 'center' }}>
+				<div className={s.year_tags}>
 					<div className={s.year}>{year}</div>
 					<h4>{tags_string}</h4>
 				</div>

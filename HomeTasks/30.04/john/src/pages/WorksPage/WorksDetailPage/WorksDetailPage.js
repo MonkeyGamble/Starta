@@ -29,7 +29,7 @@ export default function DesigningDashboardsPage() {
 			<h1>{work_data[id - 1].full_title}</h1>
 			<div className={s.year_wrapper}>
 				<div className={s.year}>{work_data[id - 1].year}</div>
-				<p>{tagsString}</p>
+				<p className={s.tags}>{tagsString}</p>
 			</div>
 			<p>{work_data[id - 1].text}</p>
 			<img className={s.pic} src={work_data[id - 1].main_img} alt='pic' />

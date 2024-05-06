@@ -9,16 +9,8 @@ export default function RecentPosts() {
 	return (
 		<div className={s.recent_posts}>
 			<div className={`${s.content_line} ${s.posts}`}>
-				<div
-					style={{
-						display: 'flex',
-						justifyContent: 'space-between',
-						alignItems: 'flex-end',
-						marginBottom: '20px',
-					}}
-				>
+				<div className={s.recent_header}>
 					<h3>Recent posts</h3>
-
 					<Link to='/blog'>View all</Link>
 				</div>
 

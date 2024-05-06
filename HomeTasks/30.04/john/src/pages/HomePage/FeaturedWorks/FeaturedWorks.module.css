@@ -78,3 +78,25 @@
 	color: #8695a4;
 	font-weight: 400;
 }
+
+@media (max-width: 375px) {
+	.featured_works {
+		align-items: center;
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+	.featured_works h3 {
+		font-size: 18px;
+	}
+	.items_wrapper {
+		flex-direction: column;
+		align-items: center;
+		padding: 0 15px 20px 15px;
+		margin-top: 0;
+	}
+	.items_wrapper img {
+		width: 100%;
+		object-fit: contain;
+		border-radius: 6px;
+	}
+}
