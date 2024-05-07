@@ -1,53 +1,29 @@
-.buttons {
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
 	display: flex;
-	justify-content: center;
-	margin: 50px;
-	display: flex;
+	flex-direction: column;
 	gap: 25px;
-	padding: 50px;
-	background-color: black;
+	margin: 50px 50px;
 }
 
-.all_buttons {
-	width: 150px;
-	border: none;
-	padding: 10px;
-	border-radius: 10px;
-	cursor: pointer;
-	font-weight: 600;
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	list-style-type: none;
 }
 
-.all_buttons:hover {
-	scale: 1.1;
-	transition: ease 0.2s;
-}
-
-.red_button {
-	background-color: red;
-}
-
-.blue_button {
-	background-color: blue;
-	color: white;
-}
-
-.green_button {
-	background-color: green;
-	color: white;
-}
-.yellow_button {
-	background-color: yellow;
-}
-
-.purple_button {
-	background-color: purple;
-	color: white;
-}
-
-.black_square {
+input {
 	width: 300px;
-	height: 300px;
-	background-color: black;
-	margin-left: auto;
-	margin-right: auto;
+	height: 30px;
+}
+
+.items {
+	display: flex;
+	align-items: center;
 }

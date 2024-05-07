@@ -1,59 +1,50 @@
 import './App.css';
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function App() {
-	const [color, setColor] = useState('black');
-	const squareRef = useRef(null);
+	const [selectedItems, setSelectedItems] = useState([]);
 
-	const changeColor = color => {
-		setColor(color);
+	let arrayObj = [
+		{
+			id: 1,
+			name: 'item1',
+		},
+		{
+			id: 2,
+			name: 'item2',
+		},
+		{
+			id: 3,
+			name: 'item3',
+		},
+		{
+			id: 4,
+			name: 'item4',
+		},
+		{
+			id: 5,
+			name: 'item5',
+		},
+	];
+
+	const handleClick = e => {
+		if (e.target.checked) setSelectedItems([...selectedItems, e.target.value]);
+		else
+			setSelectedItems(selectedItems.filter(elem => elem !== e.target.value));
 	};
 
-	useEffect(() => {
-		document.addEventListener('mousedown', e => {
-			if (!squareRef.current.contains(e.target)) setColor('black');
-		});
-	}, []);
-
 	return (
-		<div>
-			<div className='buttons'>
-				<button
-					className='red_button all_buttons'
-					onClick={() => changeColor('red')}
-				>
-					Red
-				</button>
-				<button
-					className='blue_button all_buttons'
-					onClick={() => changeColor('blue')}
-				>
-					Blue
-				</button>
-				<button
-					className='green_button all_buttons'
-					onClick={() => changeColor('green')}
-				>
-					Green
-				</button>
-				<button
-					className='yellow_button all_buttons'
-					onClick={() => changeColor('yellow')}
-				>
-					Yellow
-				</button>
-				<button
-					className='purple_button all_buttons'
-					onClick={() => changeColor('purple')}
-				>
-					Purple
-				</button>
-			</div>
-			<div
-				className='black_square'
-				style={{ backgroundColor: color }}
-				ref={squareRef}
-			></div>
+		<div className='container'>
+			<input className='text_input' value={selectedItems.join(', ')} readOnly />
+
+			<ul>
+				{arrayObj.map(elem => (
+					<div className='items' key={elem.id}>
+						<input type='checkbox' value={elem.name} onClick={handleClick} />
+						<li>{elem.name}</li>
+					</div>
+				))}
+			</ul>
 		</div>
 	);
 }
