@@ -9,12 +9,16 @@
 	flex-direction: column;
 	gap: 25px;
 	margin: 50px 50px;
+	justify-content: center;
+	align-items: center;
 }
 
 ul {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	justify-content: center;
+	align-items: center;
 	list-style-type: none;
 }
 
@@ -26,4 +30,5 @@ input {
 .items {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }

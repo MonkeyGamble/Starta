@@ -1,10 +1,11 @@
+import { useRef, useState } from 'react';
 import './App.css';
-import { useState } from 'react';
 
 export default function App() {
 	const [selectedItems, setSelectedItems] = useState([]);
-
-	let arrayObj = [
+	const [active, setActive] = useState(false);
+	const ref = useRef(null);
+	let items = [
 		{
 			id: 1,
 			name: 'item1',
@@ -27,24 +28,39 @@ export default function App() {
 		},
 	];
 
-	const handleClick = e => {
+	const handleCheck = e => {
 		if (e.target.checked) setSelectedItems([...selectedItems, e.target.value]);
 		else
 			setSelectedItems(selectedItems.filter(elem => elem !== e.target.value));
 	};
 
-	return (
-		<div className='container'>
-			<input className='text_input' value={selectedItems.join(', ')} readOnly />
+	const handleFocus = () => {
+		setActive(true);
+	};
 
-			<ul>
-				{arrayObj.map(elem => (
-					<div className='items' key={elem.id}>
-						<input type='checkbox' value={elem.name} onClick={handleClick} />
-						<li>{elem.name}</li>
-					</div>
-				))}
-			</ul>
+	const clickOutside = e => {
+		if (!ref.current.contains(e.target)) setActive(false);
+	};
+
+	return (
+		<div className='container' onClick={clickOutside}>
+			<input
+				className='text_input'
+				value={selectedItems.join(', ')}
+				onFocus={handleFocus}
+				ref={ref}
+				readOnly
+			/>
+			{active && (
+				<ul>
+					{items.map(elem => (
+						<div className='items' key={elem.id}>
+							<input type='checkbox' value={elem.name} onChange={handleCheck} />
+							<li>{elem.name}</li>
+						</div>
+					))}
+				</ul>
+			)}
 		</div>
 	);
 }
