@@ -1,18 +1,20 @@
 import s from './Modal.module.css';
 import { Routes, Route } from 'react-router-dom';
 import FormElem from '../FormElem';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 export default function Modal({ active, setActive }) {
 	return (
 		<div className={`${s.modal} ${active && s.active}`}>
 			<div className={`${s.modal_content} ${active && s.active}`}>
-				<button
+				<FontAwesomeIcon
+					className={s.xmark}
+					icon={faXmark}
 					onClick={() => {
 						setActive(false);
 					}}
-				>
-					X
-				</button>
+				/>
 				<Routes>
 					<Route
 						path='/login'
