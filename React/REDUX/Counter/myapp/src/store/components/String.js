@@ -1,5 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+	changeAction,
+	reverseAction,
+	toUpperCaseAction,
+} from '../stringReducer';
 
 export default function String() {
 	const string = useSelector(store => store.string.string);
@@ -9,13 +14,9 @@ export default function String() {
 		<div>
 			<h1>String</h1>
 			<h2>{string}</h2>
-			<button onClick={() => dispatch({ type: 'TO_UPPER_CASE' })}>
-				To Upper Case
-			</button>
-			<button onClick={() => dispatch({ type: 'REVERSE' })}>Reverse</button>
-			<button onClick={() => dispatch({ type: 'CHANGE', payload: 5 })}>
-				Change
-			</button>
+			<button onClick={() => dispatch(toUpperCaseAction)}>To Upper Case</button>
+			<button onClick={() => dispatch(reverseAction)}>Reverse</button>
+			<button onClick={() => dispatch(changeAction(+prompt()))}>Change</button>
 		</div>
 	);
 }
