@@ -7,9 +7,24 @@ const defaultState = {
 	],
 };
 
+const DELETE_USER = 'DELETE_USER'
+const AGE_FILTER = 'AGE_FILTER'
+
 export const usersReducer = (state = defaultState, action) => {
 	switch (action.type) {
+		case 'DELETE_USER':
+			return {users: state.users.slice(0, -1)}
+		case 'AGE_FILTER':
+			return {users: state.users.filter(el=>el.age>35)}
 		default:
 			return state;
 	}
 };
+
+export const deleteUserAction = ()=> ({
+	type: DELETE_USER
+})
+export const ageFilterAction = ()=> ({
+	type: AGE_FILTER
+
+})

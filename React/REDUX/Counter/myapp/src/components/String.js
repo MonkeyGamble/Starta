@@ -4,7 +4,7 @@ import {
 	changeAction,
 	reverseAction,
 	toUpperCaseAction,
-} from '../stringReducer';
+} from '../store/stringReducer';
 
 export default function String() {
 	const string = useSelector(store => store.string.string);

@@ -7,7 +7,7 @@ import {
 	incrByPayloadAction,
 	incrByPromptAction,
 	resetAction,
-} from '../counterReducer';
+} from '../store/counterReducer';
 
 export default function Counter() {
 	const count = useSelector(store => store.count.count); //позволяет получить State из хранилища

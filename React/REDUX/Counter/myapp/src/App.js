@@ -1,6 +1,6 @@
-import Counter from './store/components/Counter';
-import String from './store/components/String';
-import Users from './store/components/Users';
+import Counter from './components/Counter';
+import String from './components/String';
+import Users from './components/Users';
 
 export default function App() {
 	return (
