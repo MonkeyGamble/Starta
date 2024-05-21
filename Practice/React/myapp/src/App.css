@@ -1,4 +1,4 @@
-* {
+/* * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -31,4 +31,21 @@ input {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+} */
+
+li {
+	list-style: none;
+}
+ul {
+	padding-left: 0px;
+}
+
+.items {
+	display: flex;
+}
+
+
+
+.ul {
+	display: inline-block;
 }

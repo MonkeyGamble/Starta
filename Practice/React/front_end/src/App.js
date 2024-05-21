@@ -1,27 +1,37 @@
-import { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import './App.css';
 
-export default function App() {
-	const [variable, setVariable] = useState([]);
+function App() {
+	const [selected, setSelected] = useState([]);
+	const ref = useRef(null);
 
-	useEffect(() => {
-		fetch('https://jsonplaceholder.typicode.com/posts')
-			.then(response => response.json())
-			.then(json => setVariable(json));
-	}, []);
+	const items = [
+		{ id: 1, name: 'item1' },
+		{ id: 2, name: 'item2' },
+		{ id: 3, name: 'item3' },
+		{ id: 4, name: 'item4' },
+		{ id: 5, name: 'item5' },
+	];
+
+	const handleClick = e => {
+		if (e.target.checked) setSelected([...selected, e.target.value]);
+		else setSelected(selected.filter(item => item != e.target.value));
+	};
 
 	return (
-		<div>
+		<div ref={ref}>
+			<input value={selected.join(',')} readOnly />
+
 			<ul>
-				{variable &&
-					variable.map(elem => {
-						return (
-							<div key={elem.id}>
-								<h2>Title: {elem.title}</h2>
-								<h4>Body: {elem.body}</h4>
-							</div>
-						);
-					})}
+				{items.map(item => (
+					<div key={item.id} className='items'>
+						<input type='checkbox' value={item.name} onClick={handleClick} />
+						<li>{item.name}</li>
+					</div>
+				))}
 			</ul>
 		</div>
 	);
 }
+
+export default App;

@@ -1,20 +1,10 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
+import { counterReducer } from './counterReducer';
+import { stringReducer } from './stringReducer';
 
-const defaultStore = {
-	count: 0,
-};
+const rootReducer = combineReducers({
+	count: counterReducer,
+	string: stringReducer,
+});
 
-const reducer = (store = defaultStore, action) => {
-	switch (action.type) {
-		case 'INCR':
-			return { count: store.count + 1 };
-		case 'DECR':
-			return { count: store.count - 1 };
-		case 'RESET':
-			return { count: (store.count = 0) };
-		default:
-			return store;
-	}
-};
-
-export const store = createStore(reducer);
+export const store = createStore(rootReducer);
